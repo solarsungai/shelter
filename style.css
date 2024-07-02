@@ -116,3 +116,73 @@ a {
     color: #CDCDCD;
     margin-top: 42px;
 }
+
+.make-a-friend-button {
+    display: inline-block;
+    width: 207px;
+    height: 52px;
+    line-height: 52px;
+    letter-spacing: 0.75px;
+    border-radius: 100px;
+    background-color: #F1CDB3;
+    color: #292929;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 42px;
+}
+
+.about-wrapper {
+    height: 588px;
+    background-color: #FFFFFF;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.about {
+    height: 408px;
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.about-image {
+    max-width: 300px;
+    max-height: 408px;
+}
+
+.about-content {
+    max-width: 430px;
+    max-height: 380px;
+}
+
+.about-content-title {
+    max-width: 370px;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 2px;
+    color: #545454;
+    margin-bottom: 25px;
+}
+
+.about-content-subtitle {
+    max-width: 430px;
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #4C4C4C;
+    margin-bottom: 25px;
+}
