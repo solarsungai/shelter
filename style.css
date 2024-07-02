@@ -1,0 +1,118 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.header {
+    max-width: 1200px;
+    height: 90px;
+    margin: 0 auto;
+    padding-top: 30px;
+    margin-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.start-screen-gradient {
+    height: 908px;
+    width: 1280px;
+    background-image: url("img/start-screen-gradient-background.jpg");
+}
+
+.start-screen {
+    height: 908px;
+    width: 1280px;
+    background-image: url("img/start-screen-background.jpg");
+}
+
+.logo-title {
+    font-family: Georgia, Times, serif;
+    font-weight: 400;
+    font-size: 32px;
+    letter-spacing: 1.25px;
+    color: #F1CDB3;
+}
+
+.logo-subtitle {
+    font-family: Arial,  sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 14.95px;
+    letter-spacing: 1.25px;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-item {
+    margin-right: 35px;
+}
+
+.nav-item:last-child {
+    margin-right: 0;
+}
+
+.nav-link {
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    color: #CDCDCD;
+}
+
+.start-screen-main {
+    background-image: url(img/start-screen-puppy.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    max-width: 1200px;
+    height: 728px;
+    margin: 0 auto;
+    margin-top: 90px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.start-screen-content {
+    height: 322px;
+    max-width: 460px;
+}
+
+.start-screen-title {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 57.2px;
+    color: #FFFFFF;
+}
+
+.start-screen-subtitle {
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #CDCDCD;
+    margin-top: 42px;
+}
