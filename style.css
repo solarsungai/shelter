@@ -487,3 +487,142 @@ a {
     letter-spacing: 1px;
     color: #F1CDB3;
 }
+
+
+/* OUR PETS page style */
+
+.pets-header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+.pets-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.pets-logo {
+    width: 184px;
+    height: 60px;
+}
+
+.pets-logo-title {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: 1.25px;
+    color: #545454;
+}
+
+.pets-logo-subtitle {
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 14.95px;
+    letter-spacing: 1.25px;
+    color: #292929;
+    margin-top: 10px;
+}
+
+.pets-nav-link {
+    font-family: Arial;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    color: #545454;
+}
+
+.pets-nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.pets-friends-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    background-color: #F6F6F6;
+    padding-bottom: 100px;
+}
+
+.pets-friends {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+.pets-friends-title {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 2px;
+    color: #545454;
+    text-align: center;
+    height: 90px;
+    margin-bottom: 45px;
+}
+
+.pets-slider-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 45px;
+    grid-column-gap: 40px;
+    padding: 15px 0;
+}
+
+.pets-slider-card {
+    width: 270px;
+    height: 435px;
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pets-slider-nav {
+    padding-top: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-circle-left-1, .nav-circle-left-2, .nav-number-circle, 
+.nav-circle-right-1, .nav-circle-right-2 {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    cursor: pointer;
+}
+
+.nav-circle-left-1, .nav-circle-left-2, 
+.nav-circle-right-1, .nav-circle-right-2 {
+    border: 2px solid #CDCDCD;
+    color: #CDCDCD;
+    background-color: transparent;
+}
+
+.nav-number-circle {
+    background-color: #F1CDB3;
+    color: #292929;
+}
+
