@@ -284,14 +284,19 @@ a {
 
 .help-wrapper {
     max-width: 1280px;
-    height: 611px;
     background-color: #FFFFFF;
 }
 
 .help {
     max-width: 1200px;
     height: 431px;
-    padding-top: 80px;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .help-title {
@@ -309,20 +314,30 @@ a {
 
 .help-list {
     width: 1026px;
-    height: 281px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 55px;
 }
 
 .help-list-1 {
     display: inline-flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 120px;
 }
 
 .help-list-2 {
     display: inline-flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 120px;
+}
+
+.help-list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .help-list-item-text {
@@ -334,4 +349,141 @@ a {
     color: #545454;
     text-align: center;
     margin-top: 30px;
+}
+
+.donation-wrapper {
+    padding-top: 80px;
+    max-width: 1280px;
+    height: 462px;
+    background-color: #F6F6F6;
+}
+
+.donation-content {
+    margin: 0 auto;
+    max-width: 915px;
+    height: 282px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.donation-title {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 1px;
+    color: #545454;
+    margin-bottom: 20px;
+}
+
+.donation-subtitle {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16.5px;
+    letter-spacing: 1px;
+    color: #545454;
+    margin-bottom: 20px;
+}
+
+.donation-button {
+    display: flex;
+    align-items: center;
+    width: 349px;
+    height: 43px;
+    background-color: #F1CDB3;
+    border-radius: 9px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.credit-card-number {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 1px;
+    color: #545454;
+}
+
+.donation-small-text {
+    font-family: Arial;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 18px;
+    color: #B2B2B2;
+}
+
+.footer-gradient {
+    height: 350px;
+    background-image: url("img/footer-gradient-background.png");
+}
+
+.footer-wrapper {
+    height: 350px;
+    padding-top: 40px;
+    background-image: url("img/footer-background.png");
+}
+
+.footer-content {
+    height: 310px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 160px;
+}
+
+.footer-contacts {
+    margin-top: 16px;
+    max-width: 278px;
+}
+
+.footer-locations {
+    margin-top: 16px;
+    max-width: 302px;
+}
+
+.footer-contacts-title {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.footer-locations-title {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 45.5px;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    margin-bottom: 40px;
+}
+
+.footer-email, .footer-phone,
+.footer-locations-boston, .footer-locations-london {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-email, .footer-locations-boston {
+    margin-bottom: 40px;
+}
+
+.footer-text {
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 1px;
+    color: #F1CDB3;
 }
