@@ -73,13 +73,41 @@ a {
     margin-right: 0;
 }
 
-.nav-link {
+.nav-link, .nav-link-1 {
     font-family: Arial;
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
     letter-spacing: 0.25px;
     color: #CDCDCD;
+    position: relative;
+}
+
+.nav-link-1::after {
+    content: '';
+    position: absolute;
+    width: 114px;
+    height: 3px;
+    display: block;
+    left: 0;
+    background: #F1CDB3;
+    margin-top: 5px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    display: block;
+    background: #F1CDB3;
+    transition: width 0.3s ease, right 0.3s ease;
+}
+
+.nav-link:hover::after, .nav-link:focus::after, 
+.nav-link:active::after {
+    width: 100%;
+    right: 0;
 }
 
 .start-screen-main {
@@ -152,8 +180,9 @@ a {
     background-color: #FFFFFF;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 120px;
 }
 
 .about-image {
@@ -217,12 +246,35 @@ a {
 }
 
 .pets-slider {
-    height: 435px;
-    width: 1200px;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.slider-card {
+.slider-button {
+    width: 52px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-arrow {
+    font-weight: bold;
+}
+
+.slider-cards {
+    height: 435px;
+    display: flex;
+    justify-content: center;
+}
+
+.slider-card-item {
     width: 270px;
     height: 435px;
     background-color: #FAFAFA;
@@ -232,8 +284,12 @@ a {
     margin-left: 90px;
 }
 
-.slider-card:first-child {
-    margin-left: 105px;
+.slider-card-item:first-child {
+    margin-left: 53px;
+}
+
+.slider-card-item:last-child {
+    margin-right: 53px;
 }
 
 .pets-slider-card-title {
