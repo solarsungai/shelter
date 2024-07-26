@@ -10,6 +10,10 @@ a {
     text-decoration: none;
 }
 
+.background {
+    background-image: url("img/noise_transparent.png");
+}
+
 .wrapper {
     max-width: 1280px;
     margin: 0 auto;
@@ -340,6 +344,7 @@ a {
 
 .help-wrapper {
     max-width: 1280px;
+    height: 611px;
     background-color: #FFFFFF;
 }
 
@@ -347,7 +352,7 @@ a {
     max-width: 1200px;
     height: 431px;
     margin: 0 auto;
-    margin-top: 80px;
+    padding-top: 80px;
     margin-bottom: 100px;
     display: flex;
     flex-direction: column;
@@ -365,6 +370,7 @@ a {
     text-align: center;
     max-width: 308px;
     height: 90px;
+    margin-top: 80px;
     margin-bottom: 60px;
 }
 
@@ -585,7 +591,7 @@ a {
     font-weight: 400;
     font-size: 32px;
     line-height: 32px;
-    letter-spacing: 1.25px;
+    letter-spacing: 1.75px;
     color: #545454;
 }
 
@@ -597,6 +603,8 @@ a {
     letter-spacing: 1.25px;
     color: #292929;
     margin-top: 10px;
+    padding-top: 3px;
+    padding-left: 5px;
 }
 
 .pets-nav-link, .pets-nav-link-2 {
@@ -604,7 +612,6 @@ a {
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
-    letter-spacing: 0.25px;
     color: #545454;
     position: relative;
 }
@@ -641,6 +648,8 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 35px;
+    margin-top: -5px;
+    margin-left: -5px;
 }
 
 .pets-friends-container {
@@ -671,7 +680,7 @@ a {
 .pets-slider-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-row-gap: 45px;
+    grid-row-gap: 30px;
     grid-column-gap: 40px;
     padding: 15px 0;
 }
