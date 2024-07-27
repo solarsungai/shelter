@@ -166,6 +166,11 @@ a {
     margin-top: 42px;
 }
 
+.make-a-friend-button:hover {
+    background-color: #FDDCC4;
+    cursor: pointer;
+}
+
 .about-wrapper {
     height: 588px;
     background-color: #FFFFFF;
@@ -332,6 +337,11 @@ a {
     text-align: center;
     transition: background-color 0.3s ease;
     margin-top: 60px;
+}
+
+.get-to-know-button:hover {
+    background-color: #FDDCC4;
+    cursor: pointer;
 }
 
 .learn-more-button {
