@@ -290,10 +290,11 @@ a {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
-.slider-card-item:hover {
+.slider-card-item:hover, .slider-card-item:focus, .slider-card-item:active {
     transform: translateY(-10px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     border: 1px solid #ccc;
+    cursor: pointer;
 }
 
 .slider-card-item:first-child {
@@ -703,10 +704,11 @@ a {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
 }
 
-.pets-slider-card:hover {
+.pets-slider-card:hover, .pets-slider-card:focus, .pets-slider-card:active {
     transform: translateY(-10px);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     border: 1px solid #ccc;
+    cursor: pointer;
 }
 
 .pets-slider-nav {
