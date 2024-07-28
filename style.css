@@ -319,6 +319,13 @@ a {
     cursor: pointer;
 }
 
+.slider-card-item:hover .learn-more-button, .slider-card-item:focus .learn-more-button,
+.slider-card-item:active .learn-more-button {
+    border: 2px solid #FDDCC4;
+    background-color: #FDDCC4;
+    cursor: pointer;
+}
+
 .slider-card-item:first-child {
     margin-left: 53px;
 }
@@ -339,6 +346,23 @@ a {
     text-align: center;
 }
 
+.learn-more-button {
+    display: inline-block;
+    width: 187px;
+    height: 52px;
+    line-height: 52px;
+    letter-spacing: 0.75px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    background-color: #FAFAFA;
+    color: #292929;
+    font-family: Georgia;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
 .get-to-know-button {
     display: inline-block;
     width: 261px;
@@ -357,29 +381,6 @@ a {
 }
 
 .get-to-know-button:hover {
-    background-color: #FDDCC4;
-    cursor: pointer;
-}
-
-.learn-more-button {
-    display: inline-block;
-    width: 187px;
-    height: 52px;
-    line-height: 52px;
-    letter-spacing: 0.75px;
-    border: 2px solid #F1CDB3;
-    border-radius: 100px;
-    background-color: #FAFAFA;
-    color: #292929;
-    font-family: Georgia;
-    font-weight: 400;
-    font-size: 17px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.learn-more-button:hover {
-    border: 2px solid #FDDCC4;
     background-color: #FDDCC4;
     cursor: pointer;
 }
@@ -773,6 +774,13 @@ a {
 .pets-slider-card:hover, .pets-slider-card:focus, .pets-slider-card:active {
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.pets-slider-card:hover .learn-more-button, .pets-slider-card:focus .learn-more-button,
+.pets-slider-card:active .learn-more-button {
+    border: 2px solid #FDDCC4;
+    background-color: #FDDCC4;
     cursor: pointer;
 }
 
