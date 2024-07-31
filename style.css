@@ -12,24 +12,15 @@ a {
 }
 
 .header {
-    max-width: 1200px;
+    width: 93%;
     height: 90px;
     margin: 0 auto;
     padding-top: 30px;
-    margin-left: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
-/* 
-.start-screen-gradient {
-    height: 908px;
-    background-image: url("img/start-screen-gradient-background.jpg");
-    background-size: cover;
-    background-position: center;
-}
- */
 
  .start-screen-gradient {
     width: 100%;
