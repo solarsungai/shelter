@@ -885,6 +885,36 @@ a {
 
 @media (max-width: 768px) {
     
+    .header {
+        width: 92.19vw;
+    }
+
+    .nav-list {
+        margin-right: 3px;
+        margin-bottom: 2px;
+    }
+
+    .start-screen-main {
+        margin-top: 60px;
+    }
+
+    .start-screen-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .make-a-friend-button {
+        align-self: center;
+        letter-spacing: 1px;
+    }
+
+    .start-screen-picture {
+        width: 74vw;
+        height: 90.23vw;
+        margin-right: -140px;
+    }
+    
     .slider-card-item:last-child {
         display: none;
     }
@@ -899,14 +929,35 @@ a {
 
     .help {
         margin-top: 0;
+        width: 100%;
+    }
+
+    .help-list {
+        width: 83vw;
+        gap:7.81vw;
+        margin-bottom: 5px;
+    }
+
+    .help-list-item {
+        width: 170px;
+        height: 113px;
+        margin-bottom: -5px;
     }
 
     .footer-wrapper {
-        padding-top: 15px;
+        padding-top: 10px;
     }
 
     .footer-content {
         gap: 60px;
+    }
+
+    .footer-contacts, .footer-locations {
+        margin-top: 20px;
+    }
+
+    .footer-puppy {
+        margin-top: 2px;
     }
 }
 
