@@ -823,7 +823,26 @@ a {
     .help-wrapper {
         margin-bottom: 100px;
     }
+
+    .pets-header {
+        width: 92.1875vw;
+    }
 }
+
+@media (max-width: 1200px) {
+    .pets-friends {
+        width: 93.75vw;
+    }
+
+    .pets-slider-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pets-slider-card:nth-child(7), .pets-slider-card:last-child {
+        display: none;
+    }
+}
+
 
 @media (max-width: 1168px) {
     .start-screen-main {
@@ -849,6 +868,13 @@ a {
     .slider-cards {
         justify-content: space-around;
     }
+}
+
+@media (max-width: 940px) {
+.pets-slider-container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+}
 }
 
 @media (max-width: 920px) {
@@ -954,6 +980,28 @@ a {
     .footer-puppy {
         margin-top: 2px;
     }
+
+    .pets-friends-container {
+        padding-bottom: 70px;
+    }
+
+    .pets-friends {
+        padding-bottom: 5px;
+    }
+
+    .pets-friends-title {
+        margin-bottom: 30px;
+    }
+
+    .pets-slider-container {
+        width: 75.52vw;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .pets-slider-nav {
+        padding-top: 40px;
+    }
 }
 
 @media (max-width: 764px) {
@@ -961,11 +1009,19 @@ a {
     .slider-card-item:nth-child(2) {
         display: none;
     }
+
+    .pets-slider-container {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 714px) {
     
     .header-nav {
+        display: none;
+    }
+
+    .pets-header-nav {
         display: none;
     }
 }
@@ -992,6 +1048,19 @@ a {
     }
 }
 
+@media (max-width: 582px) {
+
+    .pets-slider-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .pets-slider-card:nth-child(4),  
+    .pets-slider-card:nth-child(5), 
+    .pets-slider-card:nth-child(6) {
+        display: none;
+    }
+}
+
 @media (max-width: 540px) {
     
     .start-screen-picture {
@@ -1009,6 +1078,25 @@ a {
         gap: 100px;
     }
 }
+
+
+
+
+@media (max-width: 430px) {
+.pets-friends-title {
+    font-size: 7.81vw;
+    line-height: 10.16vw;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+}
+
+@media (max-width: 360px) {
+    .pets-slider-nav {
+        gap: 10px;
+    }
+}
+
 
 @media (max-width: 320px) {
 
@@ -1271,4 +1359,19 @@ a {
     margin-top: 0;
 }
 
+.pets-header {
+    width: 87.5vw;
+}
+
+.pets-friends-container {
+    padding-bottom: 40px;
+}
+
+.pets-friends {
+    padding-top: 42px;
+}
+
+.pets-friends-title {
+    margin-bottom: 16px;
+}
 }
