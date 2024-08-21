@@ -1,12 +1,10 @@
-/* POPUP window script STARTS HERE */
+const petsSliderCard = document.querySelector ('.pets-slider-card');
+const mainModal = document.querySelector ('.modal-window-blackout');
+const closeButton = document.querySelector ('.modal-close-button');
 
-const sliderCardItems = document.querySelector('.slider-cards');
-const mainModal = document.querySelector('.modal-window-blackout');
-const closeButton = document.querySelector('.modal-close-button');
-
-sliderCardItems.addEventListener('click', () => {
-        mainModal.classList.toggle('hidden');
-    });
+petsSliderCard.addEventListener ('click', () => {
+    mainModal.classList.toggle ('hidden')
+})
 
 closeButton.addEventListener ('click', () => {
     mainModal.classList.toggle ('hidden')
@@ -18,79 +16,10 @@ mainModal.addEventListener ('click', (event) => {
     }
 })
 
-/* SLIDER script STARTS HERE */
-
-const leftBtn = document.querySelector('.left-slider-button');
-const rightBtn = document.querySelector('.right-slider-button');
-const sliderCards = document.querySelector('.slider-cards');
-
-const pets = [
-    { name: 'Katrine', img: 'img/pets-katrine.png', alt: 'Cat Katrine' },
-    { name: 'Jennifer', img: 'img/pets-jennifer.png', alt: 'Puppy Jennifer' },
-    { name: 'Woody', img: 'img/pets-woody.png', alt: 'Dog Woody' },
-    { name: 'Sophia', img: 'img/pets-sophia.png', alt: 'Puppy Sophia' },
-    { name: 'Timmy', img: 'img/pets-timmy.png', alt: 'Cat Timmy' },
-    { name: 'Charly', img: 'img/pets-charly.png', alt: 'Dog Charly' },
-    { name: 'Scarlett', img: 'img/pets-scarlett.png', alt: 'Puppy Scarlett' },
-    { name: 'Freddie', img: 'img/pets-freddie.png', alt: 'Cat Freddie' }
-];
-
-let previousPets = [];
-let currentPets = [];
-
-function getRandomPets() {
-    let availablePets = pets.filter(pet => !previousPets.includes(pet));
-    let newPets = [];
-    while (newPets.length < 3 && availablePets.length > 0) {
-        const randomIndex = Math.floor(Math.random() * availablePets.length);
-        newPets.push(availablePets[randomIndex]);
-        availablePets.splice(randomIndex, 1);
-    }
-    return newPets;
-}
-
-function updateSlider(petsToShow) {
-    sliderCards.innerHTML = '';
-    petsToShow.forEach(pet => {
-        const card = document.createElement('div');
-        card.className = 'slider-card-item';
-        card.innerHTML = `
-            <img src="${pet.img}" alt="${pet.alt}">
-            <p class="pets-slider-card-title">${pet.name}</p>
-            <a href="pets.html" class="learn-more-button">Learn more</a>
-        `;
-        sliderCards.appendChild(card);
-    });
-}
-
-currentPets = getRandomPets();
-updateSlider(currentPets);
-
-rightBtn.addEventListener('click', () => {
-    previousPets = currentPets;
-    currentPets = getRandomPets();
-    updateSlider(currentPets);
-});
-
-leftBtn.addEventListener('click', () => {
-    let temp = currentPets;
-    currentPets = previousPets;
-    previousPets = temp;
-    updateSlider(currentPets);
-});
 
 
 
 
-
-
-
-
-
-
-
-
-/* GRADE info script STARTS HERE */
 
 console.log(`
     Вёрстка страницы Main соответствует макету при ширине экрана 1280px: +14\n

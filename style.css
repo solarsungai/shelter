@@ -276,10 +276,6 @@ a {
 
 /* MODAL WINDOW for Main page style STARTS HERE */
 
-.hidden {
-    visibility: hidden;
-}
-
 .modal-window-blackout {
     position: fixed;
     z-index: 1000;
@@ -290,6 +286,10 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .modal-close-button-area {
