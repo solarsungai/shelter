@@ -1,3 +1,26 @@
+const sliderCard = document.querySelector ('.slider-card-item');
+const mainModal = document.querySelector ('.modal-window-blackout');
+const closeButton = document.querySelector ('.modal-close-button');
+
+sliderCard.addEventListener ('click', () => {
+    mainModal.classList.toggle ('hidden')
+})
+
+closeButton.addEventListener ('click', () => {
+    mainModal.classList.toggle ('hidden')
+})
+
+mainModal.addEventListener ('click', (event) => {
+    if (event.target.classList.contains('modal-window-blackout') || event.target.classList.contains('modal-close-button-area')) {
+       mainModal.classList.toggle ('hidden')
+    }
+})
+
+
+
+
+
+
 console.log(`
     Вёрстка страницы Main соответствует макету при ширине экрана 1280px: +14\n
     блок <header>: +2\n

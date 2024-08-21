@@ -274,6 +274,136 @@ a {
     align-items: center;
 }
 
+/* MODAL WINDOW for Main page style STARTS HERE */
+
+.hidden {
+    visibility: hidden;
+}
+
+.modal-window-blackout {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    left: 0; top: 0;
+    background-color:rgba(41, 41, 41, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-close-button-area {
+    width: 952px;
+    height: 552px;
+    background-color: rgba(0, 0, 0, 0.0);
+    position: relative;
+    margin-left: 52px;
+}
+
+.modal-close-button {
+    width: 52px;
+    height: 52px;
+    border: 2px solid #F1CDB3;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+}
+
+.modal-close-button:hover, .slider-button:focus, .modal-close-button:active {
+    border: 2px solid #FDDCC4;
+    background-color: #FDDCC4;
+    cursor: pointer;
+}
+
+.modal-close-cross {
+    width: 15px;
+    height: 15px;
+    position: relative;
+}
+
+.close-button-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #292929;
+    position: absolute;
+    top: 40%;
+}
+
+.close-button-line:first-child {
+    transform: rotate(45deg);
+}
+
+.close-button-line:last-child {
+    transform: rotate(-45deg);
+}
+
+.modal-window {
+    width: 900px;
+    height: 500px;
+    background-color: #FAFAFA;
+    position: absolute;
+    left: 0; bottom: 0;
+    border-radius: 9px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-image {
+    width: 55.5555%;
+    height: 100%;
+    background-image: url(img/pets-jennifer.png);
+    background-size: cover;
+}
+
+.modal-content {
+    width: 39%;
+    height: 72.4%;
+    margin-top: 50px;
+    margin-right: 20px;
+    font-family: Georgia;
+    font-weight: 400;
+    color: #000000;
+    letter-spacing: 1px;
+}
+
+.modal-title {
+    font-size: 35px;
+    line-height: 45.5px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.modal-subtitle {
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 40px;
+}
+
+.modal-discription {
+    font-size: 15px;
+    line-height: 16.5px;
+    margin-bottom: 40px;
+}
+
+.modal-list {
+    font-size: 15px;
+    line-height: 16.5px;
+}
+
+.modal-list-item {
+    margin-bottom: 10px;
+}
+
+.modal-list-item b {
+    font-weight: 600;
+}
+
+/* MODAL WINDOW for Main page style ENDS HERE */
+
 .pets-title {
     font-family: Georgia;
     font-weight: 400;
