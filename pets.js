@@ -1,3 +1,5 @@
+/* POPUP window script STARTS HERE */
+
 const petsSliderCard = document.querySelector ('.pets-slider-card');
 const mainModal = document.querySelector ('.modal-window-blackout');
 const closeButton = document.querySelector ('.modal-close-button');
@@ -16,10 +18,120 @@ mainModal.addEventListener ('click', (event) => {
     }
 })
 
+/* PAGINATION slider script STARTS HERE */
+
+const pets = [
+    { name: "Katrine", img: "img/pets-katrine.png", alt: "Cat Katrine" },
+    { name: "Jennifer", img: "img/pets-jennifer.png", alt: "Puppy Jennifer" },
+    { name: "Woody", img: "img/pets-woody.png", alt: "Dog Woody" },
+    { name: "Sophia", img: "img/pets-sophia.png", alt: "Puppy Sophia" },
+    { name: "Timmy", img: "img/pets-timmy.png", alt: "Cat Timmy" },
+    { name: "Charly", img: "img/pets-charly.png", alt: "Dog Charly" },
+    { name: "Scarlett", img: "img/pets-scarlett.png", alt: "Puppy Scarlett" },
+    { name: "Freddie", img: "img/pets-freddie.png", alt: "Cat Freddie" },
+  ];
+
+  function randomCard(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  };
+
+  function generatePages(pets, petsPerPage, totalPages) {
+    const pages = [];
+    for (let i = 0; i < totalPages; i++) {
+      const pagePets = [...pets];
+      randomCard(pagePets);
+      pages.push(pagePets.slice(0, petsPerPage));
+    }
+    return pages;
+  }
+
+let petsPerPage;
+let totalPages;
+
+if (window.innerWidth >= 1280) {
+  petsPerPage = 8;
+  totalPages = 6;
+} else if (window.innerWidth >= 767) {
+  petsPerPage = 6;
+  totalPages = 8;
+} else {
+  petsPerPage = 3;
+  totalPages = 16;
+}
+
+const pages = generatePages(pets, petsPerPage, totalPages);
+let currentPage = 1;
+
+function showPage(pageNumber) {
+  const petsContainer = document.querySelector('.pets-slider-container');
+  petsContainer.innerHTML = '';
+
+  const pagePets = pages[pageNumber - 1];
+  pagePets.forEach(pet => {
+    petsContainer.innerHTML += `
+      <div class="pets-slider-card">
+        <img src="${pet.img}" alt="${pet.alt}">
+        <p class="pets-slider-card-title">${pet.name}</p>
+        <a href="pets.html" class="learn-more-button">Learn more</a>
+      </div>`;
+  });
+
+  document.querySelector('.nav-number-circle').textContent = pageNumber;
+
+  document.querySelector('.nav-circle-left-1').disabled = pageNumber === 1;
+  document.querySelector('.nav-circle-left-2').disabled = pageNumber === 1;
+  document.querySelector('.nav-circle-right-1').disabled = pageNumber === totalPages;
+  document.querySelector('.nav-circle-right-2').disabled = pageNumber === totalPages;
+};
+
+showPage(currentPage);
+
+function nextPage() {
+  if (currentPage < totalPages) {
+    currentPage++;
+    showPage(currentPage);
+  }
+};
+
+function prevPage() {
+  if (currentPage > 1) {
+    currentPage--;
+    showPage(currentPage);
+  }
+};
+
+function firstPage() {
+  currentPage = 1;
+  showPage(currentPage);
+};
+
+function lastPage() {
+  currentPage = totalPages;
+  showPage(currentPage);
+};
+
+document.querySelector('.nav-circle-left-1').addEventListener('click', firstPage);
+document.querySelector('.nav-circle-left-2').addEventListener('click', prevPage);
+document.querySelector('.nav-circle-right-1').addEventListener('click', nextPage);
+document.querySelector('.nav-circle-right-2').addEventListener('click', lastPage);
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* GRADE info script STARTS HERE */
 
 console.log(`
     Вёрстка страницы Main соответствует макету при ширине экрана 1280px: +14\n

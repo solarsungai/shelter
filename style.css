@@ -11,6 +11,10 @@ a {
     text-decoration: none;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 .header {
     width: 93.75vw;
     max-width: 1200px;
@@ -117,6 +121,8 @@ a {
     height: 22px;
     position: relative;
     display: none;
+    cursor: pointer;
+    transition: transform 0.5s ease;
 }
 
 .burger-line {
@@ -1188,8 +1194,58 @@ a {
 
 @media (max-width: 767px) {
     
-    .header-nav {
+    .header-nav-blackout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #29292999;
+    opacity: 0.6;
+    z-index: 998;
+    }
+
+    .hidden {
         display: none;
+    }
+
+    .header-nav {
+        width: 320px;
+        height: 100%;
+        position: fixed;
+        top: 0; right: -100%;
+        background-color: #292929;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.5s ease;
+        z-index: 999;
+    }
+
+    .menu-open {
+        right: 0;
+    }
+
+    .icon-rotate {
+        transform: rotate(90deg);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .nav-item {
+        margin-right: 0px;
+    }
+
+    .nav-link, .nav-link-1 {
+        font-size: 32px;
+        line-height: 51.2px;
+    }
+
+    .nav-link-1::after {
+        width: 243px;
     }
 
     .pets-header-nav {
@@ -1198,6 +1254,7 @@ a {
 
     .header-burger-ico {
         display: block;
+        z-index: 1000;
     }
 }
 

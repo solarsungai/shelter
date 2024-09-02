@@ -1,3 +1,24 @@
+/* BURGER menu script STARTS HERE */
+
+const menu = document.querySelector('.header-nav');
+const burgerIcon = document.querySelector('.header-burger-ico');
+const blackout = document.querySelector('.header-nav-blackout');
+const body = document.body;
+
+burgerIcon.addEventListener('click', () => {
+    menu.classList.toggle('menu-open');
+    burgerIcon.classList.toggle('icon-rotate');
+    blackout.classList.toggle('hidden');
+    body.classList.toggle('no-scroll');
+});
+
+blackout.addEventListener('click', () => {
+    menu.classList.remove('menu-open');
+    burgerIcon.classList.remove('icon-rotate');
+    blackout.classList.add('hidden');
+    body.classList.toggle('no-scroll');
+});
+
 /* POPUP window script STARTS HERE */
 
 const sliderCardItems = document.querySelector('.slider-cards');
