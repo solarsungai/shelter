@@ -39,14 +39,26 @@ const pets = [
   };
 
   function generatePages(pets, petsPerPage, totalPages) {
-    const pages = [];
+    const petsForPage = [];
+    
+    let previousPage = [];
+  
     for (let i = 0; i < totalPages; i++) {
-      const pagePets = [...pets];
-      randomCard(pagePets);
-      pages.push(pagePets.slice(0, petsPerPage));
+      const availablePets = [...pets];
+      const currentPage = [];
+      for (let j = 0; j < petsPerPage; j++) {
+        const candidates = availablePets.filter(pet => pet !== previousPage[j]);
+        const randomIndex = Math.floor(Math.random() * candidates.length);
+        const selectedPet = candidates[randomIndex];
+        currentPage.push(selectedPet);
+        availablePets.splice(availablePets.indexOf(selectedPet), 1);
+      }
+      petsForPage.push(currentPage);
+      previousPage = currentPage;
     }
-    return pages;
-  }
+  
+    return petsForPage;
+  };
 
 let petsPerPage;
 let totalPages;
