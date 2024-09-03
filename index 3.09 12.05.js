@@ -19,70 +19,80 @@ blackout.addEventListener('click', () => {
     body.classList.toggle('no-scroll');
 });
 
-/* POPUP window script STARTS HERE */
+/* POPUP window script STARTS HERE 
 
-const mainModal = document.querySelector ('.modal-window-blackout');
-const modal = document.querySelector ('.modal-window');
-const modalImage = modal.querySelector ('.modal-image');
-const modalTitle = modal.querySelector ('.modal-title');
-const modalSubtitle = modal.querySelector ('.modal-subtitle');
-const modalDescription = modal.querySelector ('.modal-discription');
-const modalList = modal.querySelector ('.modal-list');
-const closeButton = document.querySelector ('.modal-close-button');
+const sliderCardItems = document.querySelector('.slider-cards');
+const mainModal = document.querySelector('.modal-window-blackout');
+const closeButton = document.querySelector('.modal-close-button');
 
-function updateModalContent(pet) {
-    modalImage.style.backgroundImage = `url(${pet.img})`;
-    modalTitle.textContent = pet.name;
-    modalSubtitle.textContent = `${pet.type} - ${pet.breed}`;
-    modalDescription.textContent = pet.description;
+sliderCardItems.addEventListener('click', () => {
+        mainModal.classList.toggle('hidden');
+    });
+
+closeButton.addEventListener ('click', () => {
+    mainModal.classList.toggle ('hidden')
+})
+
+mainModal.addEventListener ('click', (event) => {
+    if (event.target.classList.contains('modal-window-blackout') || event.target.classList.contains('modal-close-button-area')) {
+       mainModal.classList.toggle ('hidden')
+    }
+})
+*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    const sliderCards = document.querySelectorAll ('.slider-card-item');
+    const mainModal = document.querySelector ('.modal-window-blackout');
+    const modal = document.querySelector ('.modal-window');
+    const modalImage = modal.querySelector ('.modal-image');
+    const modalTitle = modal.querySelector ('.modal-title');
+    const modalSubtitle = modal.querySelector ('.modal-subtitle');
+    const modalDescription = modal.querySelector ('.modal-discription');
+    const modalList = modal.querySelector ('.modal-list');
+    const closeButton = document.querySelector ('.modal-close-button');
   
-     modalList.innerHTML = `
-        <li class="modal-list-item"><b>Age:</b> ${pet.age}</li>
-        <li class="modal-list-item"><b>Inoculations:</b> ${pet.inoculations.join(', ')}</li>
-        <li class="modal-list-item"><b>Diseases:</b> ${pet.diseases.join(', ')}</li>
-        <li class="modal-list-item"><b>Parasites:</b> ${pet.parasites.join(', ')}</li>
-    `;
-};
-
-function attachCardClickEvents() {
-    const sliderCards = document.querySelectorAll('.slider-card-item');
     sliderCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const cardTitle = card.querySelector('.pets-slider-card-title').textContent;
-            const pet = petsDescription.find(pet => pet.name === cardTitle);
-
-            if (pet) {
-                updateModalContent(pet);
-                mainModal.classList.remove('hidden');
-            }
-        });
+      card.addEventListener('click', () => {
+          const cardTitle = card.querySelector('.pets-slider-card-title').textContent;
+          const pet = petsDescription.find(pet => pet.name === cardTitle);
+  
+          if (pet) {
+              updateModalContent(pet);
+              mainModal.classList.toggle ('hidden');
+          }
+      });
+  
+    function updateModalContent(pet) {
+        modalImage.style.backgroundImage = `url(${pet.img})`;
+        modalTitle.textContent = pet.name;
+        modalSubtitle.textContent = `${pet.type} - ${pet.breed}`;
+        modalDescription.textContent = pet.description;
+  
+        modalList.innerHTML = `
+            <li class="modal-list-item"><b>Age:</b> ${pet.age}</li>
+            <li class="modal-list-item"><b>Inoculations:</b> ${pet.inoculations.join(', ')}</li>
+            <li class="modal-list-item"><b>Diseases:</b> ${pet.diseases.join(', ')}</li>
+            <li class="modal-list-item"><b>Parasites:</b> ${pet.parasites.join(', ')}</li>
+        `;
+    }
     });
-}
-
-function attachModalEvents() {
-    closeButton.addEventListener('click', () => {
-        mainModal.classList.add('hidden');
+    closeButton.addEventListener ('click', () => {
+      mainModal.classList.toggle ('hidden')
     });
-
-    mainModal.addEventListener('click', (event) => {
-        if (event.target.classList.contains('modal-window-blackout') || event.target.classList.contains('modal-close-button-area')) {
-            mainModal.classList.add('hidden');
-        }
+  
+    mainModal.addEventListener ('click', (event) => {
+      if (event.target.classList.contains('modal-window-blackout') || event.target.classList.contains('modal-close-button-area')) {
+         mainModal.classList.toggle ('hidden')
+      }
     });
-}
-
-function initialize() {
-    attachCardClickEvents();
-    attachModalEvents();
-}
-document.addEventListener('DOMContentLoaded', initialize);
+  });
   
 
 /* SLIDER script STARTS HERE */
 
-const sliderCardContainer = document.querySelector('.slider-cards');
 const leftBtn = document.querySelector('.left-slider-button');
 const rightBtn = document.querySelector('.right-slider-button');
+const sliderCards = document.querySelector('.slider-cards');
 
 const pets = [
     { name: 'Katrine', img: 'img/pets-katrine.png', alt: 'Cat Katrine' },
@@ -110,7 +120,7 @@ function getRandomPets() {
 }
 
 function updateSlider(petsToShow) {
-    sliderCardContainer.innerHTML = '';
+    sliderCards.innerHTML = '';
     petsToShow.forEach(pet => {
         const card = document.createElement('div');
         card.className = 'slider-card-item';
@@ -119,9 +129,8 @@ function updateSlider(petsToShow) {
             <p class="pets-slider-card-title">${pet.name}</p>
             <a href="pets.html" class="learn-more-button">Learn more</a>
         `;
-        sliderCardContainer.appendChild(card);
+        sliderCards.appendChild(card);
     });
-    attachCardClickEvents(); 
 }
 
 currentPets = getRandomPets();

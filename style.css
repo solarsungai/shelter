@@ -1195,14 +1195,14 @@ a {
 @media (max-width: 767px) {
     
     .header-nav-blackout {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #29292999;
-    opacity: 0.6;
-    z-index: 998;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #29292999;
+        opacity: 0.6;
+        z-index: 998;
     }
 
     .hidden {
@@ -1220,10 +1220,6 @@ a {
         align-items: center;
         transition: right 0.5s ease;
         z-index: 999;
-    }
-
-    .menu-open {
-        right: 0;
     }
 
     .icon-rotate {
@@ -1248,21 +1244,53 @@ a {
         width: 243px;
     }
 
-    .pets-header-nav {
-        display: none;
-    }
-
     .header-burger-ico {
         display: block;
         z-index: 1000;
     }
+
+    .pets-header-nav {
+        width: 320px;
+        height: 100%;
+        position: fixed;
+        top: 0; right: -100%;
+        background-color: #F6F6F6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.5s ease;
+        z-index: 999;
+    }
+
+    .pets-nav-list {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .pets-nav-item {
+        margin-right: 0px;
+    }
+
+    .pets-nav-link, .pets-nav-link-2 {
+        font-size: 32px;
+        line-height: 51.2px;
+    }
+
+    .pets-nav-link-2::after {
+        width: 123px;
+    }
+
+    .menu-open {
+        right: 0;
+    }
 }
 
 @media (max-width: 764px) {
-    
+    /*
     .slider-card-item:nth-child(2) {
         display: none;
     }
+    */
 
     .pets-slider-container {
         justify-content: center;
@@ -1302,11 +1330,13 @@ a {
         grid-template-columns: repeat(1, 1fr);
     }
 
+     /*
     .pets-slider-card:nth-child(4),  
     .pets-slider-card:nth-child(5), 
     .pets-slider-card:nth-child(6) {
         display: none;
     }
+     */
 }
 
 @media (max-width: 540px) {
@@ -1407,6 +1437,7 @@ a {
 
 
 @media (max-width: 430px) {
+    
 .pets-friends-title {
     font-size: 7.81vw;
     line-height: 10.16vw;
