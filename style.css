@@ -1001,6 +1001,21 @@ a {
     cursor: pointer;
 }
 
+.nav-circle.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: #CDCDCD;
+    color: #CDCDCD;
+}
+
+.nav-circle:not(.disabled):hover,
+.nav-circle:not(.disabled):focus {
+    border-color: #FDDCC4;
+    background-color: #FDDCC4;
+    color: #292929;
+}
+
+
 /* Media requests style STARTS HERE */
 
 @media (max-width: 1275px) {
@@ -1018,10 +1033,11 @@ a {
     .pets-slider-container {
         grid-template-columns: repeat(3, 1fr);
     }
-
+/*
     .pets-slider-card:nth-child(7), .pets-slider-card:last-child {
         display: none;
     }
+*/
 }
 
 @media (max-width: 1200px) {

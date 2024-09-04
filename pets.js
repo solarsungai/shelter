@@ -70,15 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-
-
-
-
-
-
-/* PAGINATION slider script STARTS HERE 
+/* PAGINATION slider script STARTS HERE */
 
 const pets = [
   { name: "Katrine", img: "img/pets-katrine.png", alt: "Cat Katrine" },
@@ -88,101 +80,124 @@ const pets = [
   { name: "Timmy", img: "img/pets-timmy.png", alt: "Cat Timmy" },
   { name: "Charly", img: "img/pets-charly.png", alt: "Dog Charly" },
   { name: "Scarlett", img: "img/pets-scarlett.png", alt: "Puppy Scarlett" },
-  { name: "Freddie", img: "img/pets-freddie.png", alt: "Cat Freddie" },
+  { name: "Freddie", img: "img/pets-freddie.png", alt: "Cat Freddie" }
 ];
 
-function randomCard(arr) {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-}
-
-function generatePages(pets, petsPerPage, totalPages) {
-  const petsForPage = [];
-  for (let i = 0; i < totalPages; i++) {
-    const currentPets = [...pets];
-    randomCard(currentPets);
-    petsForPage.push(currentPets.slice(0, petsPerPage));
-  }
-  return petsForPage;
-}
-
-let petsPerPage;
-let totalPages;
-
-function updatePetsPerPage() {
-if (window.innerWidth >= 1280) {
-  petsPerPage = 8;
-  totalPages = 6;
-} else if (window.innerWidth >= 768) {
-  petsPerPage = 6;
-  totalPages = 8;
-} else {
-  petsPerPage = 3;
-  totalPages = 16;
-}
-}
-
-updatePetsPerPage();
-window.addEventListener('resize', updatePetsPerPage);
-
-const pages = generatePages(pets, petsPerPage, totalPages);
+let petsArray = [];
+let pageSize;
+let pageCount;
 let currentPage = 1;
 
-function showPage(pageNumber) {
-  const petsContainer = document.querySelector('.pets-slider-container');
-  petsContainer.innerHTML = '';
+function initializeSlider() {
+  generatePetsArray();
+  updatePageSize();
+  renderPage(currentPage);
+}
 
-  const pagePets = pages[pageNumber - 1];
-  pagePets.forEach(pet => {
-    petsContainer.innerHTML += `
-      <div class="pets-slider-card">
-        <img src="${pet.img}" alt="${pet.alt}">
-        <p class="pets-slider-card-title">${pet.name}</p>
-        <a href="pets.html" class="learn-more-button">Learn more</a>
-      </div>`;
+function generatePetsArray() {
+  petsArray = [];
+  for (let i = 0; i < 6; i++) {
+    petsArray = petsArray.concat(shuffleArray(pets));
+  }
+}
+
+function updatePageSize() {
+  const width = window.innerWidth;
+  if (width >= 1280) {
+    pageSize = 8;
+    pageCount = 6;
+  } else if (width >= 768) {
+    pageSize = 6;
+    pageCount = 8;
+  } else {
+    pageSize = 3;
+    pageCount = 16;
+  }
+}
+
+function shuffleArray(array) {
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
+}
+
+function renderPage(page) {
+  const petsSliderContainer = document.querySelector('.pets-slider-container');
+  petsSliderContainer.innerHTML = '';
+
+  const start = (page - 1) * pageSize;
+  const end = start + pageSize;
+  const pagePets = petsArray.slice(start, end);
+
+  pagePets.forEach((pet, index) => {
+    const card = document.createElement('div');
+    card.classList.add('pets-slider-card');
+    card.innerHTML = `
+      <img src="${pet.img}" alt="${pet.alt}">
+      <p class="pets-slider-card-title">${pet.name}</p>
+      <a href="pets.html" class="learn-more-button">Learn more</a>
+    `;
+    petsSliderContainer.appendChild(card);
   });
 
-  document.querySelector('.nav-number-circle').textContent = pageNumber;
-
-  document.querySelector('.nav-circle-left-1').disabled = pageNumber === 1;
-  document.querySelector('.nav-circle-left-2').disabled = pageNumber === 1;
-  document.querySelector('.nav-circle-right-1').disabled = pageNumber === totalPages;
-  document.querySelector('.nav-circle-right-2').disabled = pageNumber === totalPages;
+  updateNavButtons();
 }
 
-showPage(currentPage);
+function updateNavButtons() {
+  const left1 = document.querySelector('.nav-circle-left-1');
+  const left2 = document.querySelector('.nav-circle-left-2');
+  const right1 = document.querySelector('.nav-circle-right-1');
+  const right2 = document.querySelector('.nav-circle-right-2');
+  const numberCircle = document.querySelector('.nav-number-circle');
 
-function nextPage() {
-  if (currentPage < totalPages) {
-    currentPage++;
-    showPage(currentPage);
+  numberCircle.textContent = currentPage;
+
+  left1.style.cursor = currentPage === 1 ? 'not-allowed' : 'pointer';
+  left2.style.cursor = currentPage === 1 ? 'not-allowed' : 'pointer';
+  right1.style.cursor = currentPage === pageCount ? 'not-allowed' : 'pointer';
+  right2.style.cursor = currentPage === pageCount ? 'not-allowed' : 'pointer';
+}
+
+document.querySelector('.nav-circle-left-1').addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage = 1;
+    renderPage(currentPage);
   }
-}
+});
 
-function prevPage() {
+document.querySelector('.nav-circle-left-2').addEventListener('click', () => {
   if (currentPage > 1) {
     currentPage--;
-    showPage(currentPage);
+    renderPage(currentPage);
   }
-}
+});
 
-function firstPage() {
-  currentPage = 1;
-  showPage(currentPage);
-}
+document.querySelector('.nav-circle-right-1').addEventListener('click', () => {
+  if (currentPage < pageCount) {
+    currentPage++;
+    renderPage(currentPage);
+  }
+});
 
-function lastPage() {
-  currentPage = totalPages;
-  showPage(currentPage);
-}
+document.querySelector('.nav-circle-right-2').addEventListener('click', () => {
+  if (currentPage < pageCount) {
+    currentPage = pageCount;
+    renderPage(currentPage);
+  }
+});
 
-document.querySelector('.nav-circle-left-1').addEventListener('click', firstPage);
-document.querySelector('.nav-circle-left-2').addEventListener('click', prevPage);
-document.querySelector('.nav-circle-right-1').addEventListener('click', nextPage);
-document.querySelector('.nav-circle-right-2').addEventListener('click', lastPage);
+window.addEventListener('resize', () => {
+  const oldPageSize = pageSize;
+  updatePageSize();
 
+  if (currentPage > pageCount) {
+    currentPage = pageCount;
+  }
 
+  renderPage(currentPage);
+});
 
-*/
+initializeSlider();
