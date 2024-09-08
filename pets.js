@@ -4,6 +4,7 @@ const menu = document.querySelector('.pets-header-nav');
 const burgerIcon = document.querySelector('.header-burger-ico');
 const blackout = document.querySelector('.header-nav-blackout');
 const body = document.body;
+const navLinks = document.querySelectorAll('.pets-nav-link, .pets-nav-link-2');
 
 burgerIcon.addEventListener('click', () => {
     menu.classList.toggle('menu-open');
@@ -17,6 +18,15 @@ blackout.addEventListener('click', () => {
     burgerIcon.classList.remove('icon-rotate');
     blackout.classList.add('hidden');
     body.classList.toggle('no-scroll');
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+      menu.classList.remove('menu-open');
+      burgerIcon.classList.remove('icon-rotate');
+      blackout.classList.add('hidden');
+      body.classList.remove('no-scroll');
+  });
 });
 
 

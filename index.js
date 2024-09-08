@@ -4,6 +4,7 @@ const menu = document.querySelector('.header-nav');
 const burgerIcon = document.querySelector('.header-burger-ico');
 const blackout = document.querySelector('.header-nav-blackout');
 const body = document.body;
+const navLinks = document.querySelectorAll('.nav-link, .nav-link-1');
 
 burgerIcon.addEventListener('click', () => {
     menu.classList.toggle('menu-open');
@@ -17,6 +18,15 @@ blackout.addEventListener('click', () => {
     burgerIcon.classList.remove('icon-rotate');
     blackout.classList.add('hidden');
     body.classList.toggle('no-scroll');
+});
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('menu-open');
+        burgerIcon.classList.remove('icon-rotate');
+        blackout.classList.add('hidden');
+        body.classList.remove('no-scroll');
+    });
 });
 
 
@@ -250,55 +260,3 @@ console.log(`
     кнопка с крестиком интерактивная: +2\n
     окно попапа центрировано по всем осям, размеры элементов и их расположение совпадают с макетом: +2\n
     `);
-
-
-
-
-/* first SLIDER script */
-
-/*
-let previousPets = [];
-let currentPets = [];
-
-function getRandomPets() {
-    let availablePets = pets.filter(pet => !previousPets.includes(pet));
-    let newPets = [];
-    while (newPets.length < 3 && availablePets.length > 0) {
-        const randomIndex = Math.floor(Math.random() * availablePets.length);
-        newPets.push(availablePets[randomIndex]);
-        availablePets.splice(randomIndex, 1);
-    }
-    return newPets;
-}
-
-function updateSlider(petsToShow) {
-    sliderCardContainer.innerHTML = '';
-    petsToShow.forEach(pet => {
-        const card = document.createElement('div');
-        card.className = 'slider-card-item';
-        card.innerHTML = `
-            <img src="${pet.img}" alt="${pet.alt}">
-            <p class="pets-slider-card-title">${pet.name}</p>
-            <a href="pets.html" class="learn-more-button">Learn more</a>
-        `;
-        sliderCardContainer.appendChild(card);
-    });
-    attachCardClickEvents(); 
-}
-
-currentPets = getRandomPets();
-updateSlider(currentPets);
-
-rightBtn.addEventListener('click', () => {
-    previousPets = currentPets;
-    currentPets = getRandomPets();
-    updateSlider(currentPets);
-});
-
-leftBtn.addEventListener('click', () => {
-    let temp = currentPets;
-    currentPets = previousPets;
-    previousPets = temp;
-    updateSlider(currentPets);
-});
-*/
