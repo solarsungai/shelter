@@ -63,6 +63,7 @@ navLinks.forEach(link => {
         const pet = petsDescription.find(pet => pet.name === cardTitle);
         createModalContent(pet);
         mainModal.classList.toggle('hidden');
+        document.body.classList.add('no-scroll');
       });
     });
   }
@@ -70,11 +71,13 @@ navLinks.forEach(link => {
   document.addEventListener('DOMContentLoaded', () => {
   closeButton.addEventListener ('click', () => {
     mainModal.classList.toggle ('hidden')
+    document.body.classList.remove('no-scroll');
   });
 
   mainModal.addEventListener ('click', (event) => {
     if (event.target.classList.contains('modal-window-blackout') || event.target.classList.contains('modal-close-button-area')) {
        mainModal.classList.toggle ('hidden')
+       document.body.classList.remove('no-scroll');
     }
   });
   });

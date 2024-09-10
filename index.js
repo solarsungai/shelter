@@ -131,7 +131,7 @@ const createSliderItem = (pet) => {
     sliderItem.innerHTML = `
     <img src="${pet.img}" alt="${pet.alt}">
     <p class="pets-slider-card-title">${pet.name}</p>
-    <a href="pets.html" class="learn-more-button">Learn more</a>`;
+    <div class="learn-more-button">Learn more</div>`;
 
     return sliderItem;
 };
